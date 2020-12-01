@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import { connect } from "react-redux";
+import { actions } from "./redux";
 
 const App = (props) => {
     const { fetching, dog, onRequestDog, error } = props;
@@ -40,7 +41,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onRequestDog: () => dispatch({ type: "API_CALL_REQUEST" })
+    // onRequestDog: () => dispatch({ type: "apiCallRequest" })
+    onRequestDog: () => dispatch(actions.apiCallRequest()), // actions.request() - {type: "request"}
   };
 };
 
